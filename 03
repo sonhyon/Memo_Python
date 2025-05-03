@@ -1,0 +1,10 @@
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'math': [92, 85, 95, 78],
+    'english': [88, 90, 92, 80],
+    'korean': [85, 87, 88, 82]
+}
+
+#Q. 수학 점수가 90점 이상인 학생들의 이름과 수학 점수 출력
+high_math = students[students['math'] >= 90][['name', 'math']]
+print(high_math)
