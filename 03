@@ -1,9 +1,12 @@
-data = {
-    'name': ['Alice', 'Bob', 'Charlie', 'David'],
-    'math': [92, 85, 95, 78],
-    'english': [88, 90, 92, 80],
-    'korean': [85, 87, 88, 82]
-}
+import pandas as pd
+
+# 초기 데이터 값
+students = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'math': [85, 92, 78, 88, 91],
+    'english': [75, 85, 93, 80, 89],
+    'korean': [88, 92, 84, 77, 93]
+})
 
 #Q. 수학 점수가 90점 이상인 학생들의 이름과 수학 점수 출력
 high_math = students[students['math'] >= 90][['name', 'math']]
