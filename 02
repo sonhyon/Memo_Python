@@ -1,0 +1,3 @@
+#Q. 중복 없는 리스트 만들기
+user = input().split(',')
+user = [int(x) for x in user]
