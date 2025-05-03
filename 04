@@ -1,0 +1,11 @@
+import pandas as pd
+
+students = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'math': [85, 92, 78, 88, 91],
+    'english': [75, 85, 93, 80, 89],
+    'korean': [88, 92, 84, 77, 93]
+})
+
+#Q. 영어(english) 점수가 70점 이상 90점 이하인 학생들의 이름과 영어 점수를 출력하세요.
+students[(students['english']>=70) & (students['english']<=90)][['name', 'english']] #소괄호를 넣어 먼저 안에 조건을 만족시킴
