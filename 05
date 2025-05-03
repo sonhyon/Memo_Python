@@ -1,0 +1,12 @@
+import pandas as pd
+
+# 초기 데이터 값
+students = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eva'],
+    'math': [85, 92, 78, 88, 91],
+    'english': [75, 85, 93, 80, 89],
+    'korean': [88, 92, 84, 77, 93]
+})
+
+#Q. 학생별로 수학(math), 영어(english), 국어(korean) 점수의 평균 점수(avg)를 새 열로 추가하라
+students['avg'] = students[['math','english','korean']].mean(axis=1)
