@@ -1,0 +1,15 @@
+# 예시 students 데이터
+students = [
+    {'name': 'Alice', 'scores': [85, 90, 88]},
+    {'name': 'Bob', 'scores': [78, 82, 80]},
+    {'name': 'Charlie', 'scores': [92, 95, 94]},
+    {'name': 'Diana', 'scores': [85, 87, 83]},
+    {'name': 'Ethan', 'scores': [72, 78, 74]}
+]
+
+#Q. 학생 성적 평균 계산기
+for student in students:
+    name = student['name']
+    scores = student['scores']
+    avg = sum(scores)/len(scores)
+    print(f"{name}의 평균 점수: {round(avg, 2)}")
