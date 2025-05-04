@@ -9,5 +9,4 @@ students = pd.DataFrame({
 })
 
 #Q. 수학 점수가 90점 이상인 학생들의 이름과 수학 점수 출력
-high_math = students[students['math'] >= 90][['name', 'math']]
-print(high_math)
+students[students['math'] >= 90][['name', 'math']]
