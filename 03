@@ -9,4 +9,5 @@ students = pd.DataFrame({
 })
 
 #Q. 평균 점수가 85점 이상인 학생들만 뽑아서, name과 avg만 출력하라. 평균 점수 기준으로 내림차순 정렬할 것.
-students.query('avg >= 85')[['name', 'avg']].sort_values(by='avg', ascending=False)
+students['avg'] = students[['math', 'english', 'korean']].mean(axis=1)
+students.query('avg >= 85')[['name', 'avg']].sort_values(by = 'avg', ascending=False)
