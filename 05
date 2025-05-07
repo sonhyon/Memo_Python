@@ -1,0 +1,14 @@
+import pandas as pd
+
+data = {
+    'product': ['A', 'B', 'A', 'C', 'B', 'C', 'A'],
+    'category': ['Food', 'Drink', 'Food', 'Food', 'Drink', 'Food', 'Food'],
+    'price': [10, 5, 12, 8, 6, 9, 11]
+}
+
+df = pd.DataFrame(data)
+df
+
+#Q. 각 category별 평균 가격을 구해서 출력하세요.
+avg_price = df.groupby('category')['price'].mean().reset_index()
+print(avg_price)
