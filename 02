@@ -1,5 +1,0 @@
-#Q. 중복 없는 리스트 만들기
-user = input(f'숫자를 입력하세요: ').split(',')
-user = [int(x) for x in user]
-unique_user = list(set(user))
-print(unique_user)
