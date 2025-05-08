@@ -1,0 +1,13 @@
+import pandas as pd
+
+data = {
+    'product': ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
+    'category': ['Electronics', 'Clothing', 'Clothing', 'Electronics', 'Food', 'Food', 'Clothing'],
+    'price': [250, 80, 120, 300, 20, 15, 110]
+}
+
+df = pd.DataFrame(data)
+df
+
+#Q. category별로 가장 비싼 제품의 가격을 구해서 출력하세요.
+df.groupby('category')['price'].max().reset_index(name='max_price')
