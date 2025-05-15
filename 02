@@ -1,0 +1,15 @@
+import pandas as pd
+
+# 예제 데이터 생성
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan'],
+    'age': [25, 30, 22, 28, 35],
+    'gender': ['Female', 'Male', 'Male', 'Female', 'Male'],
+    'score': [85, 78, 92, 88, 70]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+#Q. 데이터프레임에서 ‘gender’가 ‘Male’인 행만 필터링해서 출력하세요.
+df[df['gender'] == 'Male']
