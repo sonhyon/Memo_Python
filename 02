@@ -10,3 +10,11 @@ print(df)
 
 
 #Q. 가장 많이 판매된 상품의 이름과 판매 수량을 출력하시오.
+
+total_sales = df.groupby('Product')['Quantity'].sum()
+
+most_sold_product = total_sales.idxmax()
+most_sold_quantity = total_sales.max()
+
+print(most_sold_product)
+print(most_sold_quantity)
