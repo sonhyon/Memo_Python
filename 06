@@ -1,0 +1,13 @@
+import pandas as pd
+
+data = {
+    'Customer': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan', 'Fiona', 'George', 'Helen'],
+    'Level': ['Gold', 'Silver', 'Gold', 'Bronze', 'Silver', 'Gold', 'Bronze', 'Silver'],
+    'Age': [28, 34, 25, 40, 29, 30, 38, 22]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+#Q. Level이 'Gold' 또는 'Silver'인 고객들만 대상으로, 등급별 평균 나이를 계산하시오.
+df[df['Level'].isin(['Gold', 'Silver'])].groupby('Level')['Age'].mean()
