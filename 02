@@ -1,0 +1,12 @@
+import pandas as pd
+
+data = {
+    'Product': ['Apple', 'Banana', 'Apple', 'Orange', 'Banana', 'Apple'],
+    'Quantity': [3, 2, 5, 4, 3, 2]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+
+#Q. 가장 많이 판매된 상품의 이름과 판매 수량을 출력하시오.
