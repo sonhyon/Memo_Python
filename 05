@@ -1,0 +1,12 @@
+import pandas as pd
+
+data = {
+    'Customer': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan', 'Fiona', 'George', 'Helen'],
+    'Level': ['Gold', 'Silver', 'Gold', 'Bronze', 'Silver', 'Gold', 'Bronze', 'Silver']
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+#Q. 고객 등급(Level)별 인원 수를 계산하시오
+df.groupby('Level').size()
