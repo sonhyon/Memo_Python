@@ -1,0 +1,27 @@
+import pandas as pd
+
+data = {
+    'CustomerID': [1, 2, 3, 4, 5, 6],
+    'Gender': ['Male', 'Female', 'Female', 'Male', 'Female', 'Male'],
+    'Age': [25, 32, 41, 23, 37, 45],
+    'TotalOrders': [5, 8, 3, 10, 2, 7],
+    'TotalSpend': [200, 500, 150, 800, 100, 700]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+
+#Q. 고객을 연령대(20대, 30대, 40대)로 나누고, 각 연령대에서 평균 주문 수와 평균 지출 금액을 구하시오
+def age_group(age):
+    if age < 30:
+        return '20대'
+    elif age < 40:
+        return '30대'
+    else:
+        return '40대'
+
+df['AgeGroup'] = df['Age'].apply(age_group)
+
+result = df.groupby('AgeGroup')[['TotalOrders', 'TotalSpend']].mean().reset_index()
+print(result)
