@@ -21,7 +21,5 @@ def age_group(age):
     else:
         return '40대'
 
-df['AgeGroup'] = df['Age'].apply(age_group)
-
-result = df.groupby('AgeGroup')[['TotalOrders', 'TotalSpend']].mean().reset_index()
-print(result)
+df['Age_group'] = df['Age'].apply(age_group)
+df.groupby('Age_group')[['TotalOrders', 'TotalSpend']].mean().reset_index()
