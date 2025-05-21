@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = {
+    '이름': ['철수', '영희', '민수', '지수', '준호', '나래', '성민', '은지'],
+    '부서': ['영업', '인사', '영업', '기획', '기획', '인사', '영업', '인사'],
+    '급여': [300, 280, 320, 310, 330, 270, 290, 300]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+
+#Q. 부서별로 평균 급여를 구하고, 가장 평균 급여가 높은 부서를 찾아라
+mean_salary = df.groupby('부서')['급여'].mean()
+
+top_dept = mean_salary.idxmax()
+top_salary = mean_salary.max()
+print(top_dept, top_salary)
