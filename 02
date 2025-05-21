@@ -21,13 +21,6 @@ purchases = pd.DataFrame({
 
 
 #Q. 가장 많이 구매한 고객의 이름과 총 구매 금액을 구하시오
+total = purchases.groupby('customer_id')['amount'].sum().reset_index().sort_values(by='amount', ascending = False).head(1)
 
-# 고객별 총 구매 금액 계산
-total_by_customer = purchases.groupby('customer_id')['amount'].sum().reset_index()
-total_by_customer
-# 가장 많이 구매한 고객 정보 추출
-top_spender = total_by_customer.sort_values(by='amount', ascending=False).head(1)
-top_spender
-# 이름과 연결
-top_spender_named = top_spender.merge(customers, on='customer_id')[['name', 'amount']]
-top_spender_named
+total.merge(customers, on = 'customer_id')[['name', 'amount']]
