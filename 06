@@ -1,0 +1,20 @@
+import pandas as pd
+
+# 초기 데이터
+data = {
+    '이름': ['민수', '지영', '철수', '수진', '영희', '동현', '지훈', '예린'],
+    '성별': ['남', '여', '남', '여', '여', '남', '남', '여'],
+    '나이': [23, 21, 25, 22, 20, 24, 21, 23]
+}
+
+df = pd.DataFrame(data)
+df
+
+
+#Q, 다음 데이터에서 각 성별 그룹 중 평균 나이가 22세 이상인 그룹의 이름과 나이를 출력하세요
+avg_age_by_gender = df.groupby('성별')['나이'].mean()
+
+target_genders = avg_age_by_gender[avg_age_by_gender >= 22].index
+
+result = df[df['성별'].isin(target_genders)][['이름', '나이']]
+print(result)
