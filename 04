@@ -1,0 +1,23 @@
+import pandas as pd
+
+data = {
+    '이름': ['민수', '지영', '철수', '수진', '영희', '동현', '지훈', '예린'],
+    '이메일': [
+        'minsu@gmail.com',
+        'jiyoung@naver.com',
+        'chulsoo@gmail.com',
+        'sujin@daum.net',
+        'younghee@kakao.com',
+        'donghyun@gmail.com',
+        'jihun@outlook.com',
+        'yerin@gmail.com'
+    ]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+
+#Q, 이메일 주소의 도메인이 'gmail.com'인 사람의 이름과 이메일을 출력하세요
+condition = df['이메일'].str.endswith('@gmail.com')
+df[condition][['이름', '이메일']]
