@@ -12,9 +12,8 @@ df
 
 
 #Q, 다음 데이터에서 각 성별 그룹 중 평균 나이가 22세 이상인 그룹의 이름과 나이를 출력하세요
-avg_age_by_gender = df.groupby('성별')['나이'].mean()
+gender_age = df.groupby('성별')['나이'].mean().reset_index()
 
-target_genders = avg_age_by_gender[avg_age_by_gender >= 22].index
+over_22_gender = gender_age[gender_age['나이'] >= 22]['성별']
 
-result = df[df['성별'].isin(target_genders)][['이름', '나이']]
-print(result)
+df[df['성별'].isin(over_22_gender)][['이름', '나이']]
