@@ -1,0 +1,18 @@
+import pandas as pd
+
+data = {
+    '이름': ['민수', '지영', '철수', '수진', '영희', '동현', '지훈', '예린'],
+    '수학': [85, 79, 92, 70, 88, 90, 75, 95],
+    '영어': [78, 82, 85, 88, 76, 80, 84, 90],
+    '과학': [91, 87, 65, 77, 89, 85, 79, 90]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+#Q, 과목별 평균 점수가 80점 이상인 과목을 찾아, 해당 과목을 수강한 학생들의 이름과 점수를 출력하세요
+subject_means = df.drop(columns='이름').mean()
+
+over_80_subjects = subject_means[subject_means >= 80].index.tolist()
+
+df[['이름'] + over_80_subjects]
