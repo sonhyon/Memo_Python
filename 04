@@ -19,5 +19,4 @@ print(df)
 
 
 #Q, 이메일 주소의 도메인이 'gmail.com'인 사람의 이름과 이메일을 출력하세요
-condition = df['이메일'].str.endswith('@gmail.com')
-df[condition][['이름', '이메일']]
+df[df['이메일'].str.endswith("@gmail.com")][['이름', '이메일']]
